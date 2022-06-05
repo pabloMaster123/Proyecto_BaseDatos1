@@ -23,6 +23,8 @@ public class Pregunta {
 	
 	private ArrayList<Pregunta> preguntas;
 	
+	private Prueba prueba;
+	
 	private RespuestaUnica respuestaUnica;
 	
 	private RespuestaMultiple respuestaMultiple;
@@ -135,6 +137,14 @@ public class Pregunta {
 
 	public void setCompletar(Completar completar) {
 		this.completar = completar;
+	}
+
+	public Prueba getPrueba() {
+		return prueba;
+	}
+
+	public void setPrueba(Prueba prueba) {
+		this.prueba = prueba;
 	}
 	
 }

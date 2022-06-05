@@ -8,10 +8,15 @@ public class BancoPregunta {
 	
 	private ArrayList<Pregunta> preguntas;
 	
-	private Prueba prueba;
+	private ArrayList<Prueba> prueba;
 	
-	public BancoPregunta(){
-		
+	private Tema tema;
+	
+	public BancoPregunta(Integer codigoBancoPregunta,Tema tema){
+		this.codigoBancoPregunta = codigoBancoPregunta;
+		this.tema 				 = tema;
+		preguntas				 = new ArrayList<Pregunta>();
+		prueba 					 = new   ArrayList<Prueba>();
 	}
 
 	public Integer getCodigoBancoPregunta() {
@@ -29,13 +34,21 @@ public class BancoPregunta {
 	public void setPreguntas(ArrayList<Pregunta> preguntas) {
 		this.preguntas = preguntas;
 	}
-
-	public Prueba getPrueba() {
+	
+	public ArrayList<Prueba> getPrueba() {
 		return prueba;
 	}
 
-	public void setPrueba(Prueba prueba) {
+	public void setPrueba(ArrayList<Prueba> prueba) {
 		this.prueba = prueba;
+	}
+
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
 	}
 	
 }

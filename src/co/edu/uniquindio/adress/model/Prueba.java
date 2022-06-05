@@ -1,6 +1,7 @@
 package co.edu.uniquindio.adress.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Prueba {
 	
@@ -16,12 +17,21 @@ public class Prueba {
 	
 	private Integer cantidadPreguntas;
 	
-	private BancoPregunta bancoPregunta;
+	private ArrayList<Pregunta> preguntas;
 	
 	private Tema tema;
 
-	public Prueba() {
-		
+	public Prueba(Integer codigoPrueba,Double valorPrueba,String nombrePrueba
+			,String descripisionPrueba,LocalDate fechaPresentacion,Integer cantidadPreguntas
+			,ArrayList<Pregunta> preguntas,Tema tema) {
+		this.codigoPrueba 		= codigoPrueba;
+		this.valorPrueba  		= valorPrueba;
+		this.nombrePrueba  		= nombrePrueba;
+		this.descripisionPrueba = descripisionPrueba;
+		this.fechaPresentacion	= fechaPresentacion;
+		this.cantidadPreguntas	= cantidadPreguntas;
+		this.preguntas			= preguntas;
+		this.tema				= tema;
 	}
 	
 	public Integer getCodigoPrueba() {
@@ -72,12 +82,12 @@ public class Prueba {
 		this.cantidadPreguntas = cantidadPreguntas;
 	}
 
-	public BancoPregunta getBancoPregunta() {
-		return bancoPregunta;
+	public ArrayList<Pregunta> getPreguntas() {
+		return preguntas;
 	}
 
-	public void setBancoPregunta(BancoPregunta bancoPregunta) {
-		this.bancoPregunta = bancoPregunta;
+	public void setPreguntas(ArrayList<Pregunta> preguntas) {
+		this.preguntas = preguntas;
 	}
 
 	public Tema getTema() {

@@ -6,8 +6,8 @@ public class Docente extends Persona {
 
 	private ArrayList<Curso> cursos;
 	
-	public Docente(String cedula, String nombre, String apellido, String email, String direccion) {
-		super(cedula, nombre, apellido, email, direccion);
+	public Docente(String cedula, String nombre, String apellido, String email,String pasword, String direccion) {
+		super(cedula, nombre, apellido, email, pasword, direccion);
 		cursos = new ArrayList<Curso>();
 	}
 
@@ -19,4 +19,5 @@ public class Docente extends Persona {
 		this.cursos = cursos;
 	}
 
+	
 }

@@ -10,13 +10,16 @@ public class Persona {
 	
 	private String email;
 	
+	private String pasword;
+	
 	private String Dirrecion;
 	
-	public Persona(String cedula,String nombre,String apellido,String email,String direccion){
+	public Persona(String cedula,String nombre,String apellido,String email,String pasword,String direccion){
 		this.cedula    = cedula;
 		this.nombre    = nombre;
 		this.apellido  = apellido;
 		this.email 	   = email;
+		this.pasword   = pasword;
 		this.Dirrecion = direccion;
 	}
 
@@ -58,6 +61,14 @@ public class Persona {
 
 	public void setDirrecion(String dirrecion) {
 		Dirrecion = dirrecion;
+	}
+
+	public String getPasword() {
+		return pasword;
+	}
+
+	public void setPasword(String pasword) {
+		this.pasword = pasword;
 	}
 	
 }
