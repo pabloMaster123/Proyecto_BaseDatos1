@@ -16,7 +16,7 @@ public class BancoPregunta {
 		this.codigoBancoPregunta = codigoBancoPregunta;
 		this.tema 				 = tema;
 		preguntas				 = new ArrayList<Pregunta>();
-		prueba 					 = new   ArrayList<Prueba>();
+		prueba 					 = new ArrayList<Prueba>();
 	}
 
 	public Integer getCodigoBancoPregunta() {
@@ -50,5 +50,13 @@ public class BancoPregunta {
 	public void setTema(Tema tema) {
 		this.tema = tema;
 	}
+
+	@Override
+	public String toString() {
+		return "BancoPregunta [codigoBancoPregunta=" + codigoBancoPregunta + ", preguntas=" + preguntas + ", prueba="
+				+ prueba + ", tema=" + tema + "]";
+	}
+	
+	
 	
 }

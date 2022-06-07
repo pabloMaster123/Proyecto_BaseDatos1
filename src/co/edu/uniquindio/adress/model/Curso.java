@@ -59,5 +59,11 @@ public class Curso {
 	public void setPlanEstudio(PlanEstudio planEstudio) {
 		this.planEstudio = planEstudio;
 	}
+
+	@Override
+	public String toString() {
+		return "Curso [codigoCurso=" + codigoCurso + ", nombreCurso=" + nombreCurso + ", descripsionCurso="
+				+ descripsionCurso + ", docente=" + docente + ", planEstudio=" + planEstudio + "]";
+	}
 	
 }

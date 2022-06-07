@@ -4,15 +4,18 @@ import java.util.ArrayList;
 
 public class PruebaUsuario {
 	
+	private Integer codigoUsuario;
+	
 	private Usuario usuario;
 	
 	private Prueba prueba;
 	
-	private Double notaMaxima;
+	private Float notaMaxima;
 	
 	private ArrayList<PreguntaUsuario> preguntaUsuarios;
 	
-	public PruebaUsuario(Usuario usuario,Prueba prueba,Double notaMaxima) {
+	public PruebaUsuario(Integer codigoUsuario,Usuario usuario,Prueba prueba,Float notaMaxima) {
+		this.codigoUsuario = codigoUsuario;
 		this.usuario 	= usuario;
 		this.prueba 	= prueba;
 		this.notaMaxima = notaMaxima;
@@ -35,11 +38,11 @@ public class PruebaUsuario {
 		this.prueba = prueba;
 	}
 
-	public Double getNotaMaxima() {
+	public Float getNotaMaxima() {
 		return notaMaxima;
 	}
 
-	public void setNotaMaxima(Double notaMaxima) {
+	public void setNotaMaxima(Float notaMaxima) {
 		this.notaMaxima = notaMaxima;
 	}
 

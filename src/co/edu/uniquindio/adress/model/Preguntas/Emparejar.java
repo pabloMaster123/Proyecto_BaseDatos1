@@ -1,7 +1,5 @@
 package co.edu.uniquindio.adress.model.Preguntas;
 
-import java.util.HashMap;
-
 import co.edu.uniquindio.adress.model.Pregunta;
 
 public class Emparejar {
@@ -10,12 +8,15 @@ public class Emparejar {
 	
 	private Pregunta pregunta;
 	
-	private HashMap<String, String> parejas;
+	private MultiplesRespuestas parejas1;
 	
-	public Emparejar(Integer codigoRespuesta,Pregunta pregunta) {
+	private MultiplesRespuestas parejas2;
+	
+	public Emparejar(Integer codigoRespuesta,Pregunta pregunta,
+			MultiplesRespuestas parejas1,MultiplesRespuestas parejas2) {
 		this.codigoRespuesta = codigoRespuesta;
-		this.pregunta = pregunta;
-		parejas = new HashMap<String, String>();
+		this.pregunta 		 = pregunta;
+		this.parejas1 		 = parejas1;
 	}
 	
 	public Integer getCodigoRespuesta() {
@@ -34,12 +35,20 @@ public class Emparejar {
 		this.pregunta = pregunta;
 	}
 
-	public HashMap<String, String> getParejas() {
-		return parejas;
+	public MultiplesRespuestas getParejas1() {
+		return parejas1;
 	}
 
-	public void setParejas(HashMap<String, String> parejas) {
-		this.parejas = parejas;
+	public void setParejas1(MultiplesRespuestas parejas1) {
+		this.parejas1 = parejas1;
+	}
+
+	public MultiplesRespuestas getParejas2() {
+		return parejas2;
+	}
+
+	public void setParejas2(MultiplesRespuestas parejas2) {
+		this.parejas2 = parejas2;
 	}
 	
 }

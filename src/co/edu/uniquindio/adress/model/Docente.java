@@ -18,6 +18,13 @@ public class Docente extends Persona {
 	public void setCursos(ArrayList<Curso> cursos) {
 		this.cursos = cursos;
 	}
+	
+	@Override
+	public String toString() {
+		return "Docente [getCedula()=" + getCedula() + ", getNombre()=" + getNombre() + ", getApellido()="
+				+ getApellido() + ", getEmail()=" + getEmail() + ", getDirrecion()=" + getDirrecion()
+				+ ", getPasword()=" + getPasword() + "]";
+	}
 
 	
 }

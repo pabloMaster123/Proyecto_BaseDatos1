@@ -1,0 +1,833 @@
+--------------------------------------------------------
+-- Archivo creado  - lunes-junio-06-2022   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table BANCO_PREGUNTA
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."BANCO_PREGUNTA" 
+   (	"CODIGO" NUMBER(*,0), 
+	"CODIGO_TEMA" NUMBER(*,0), 
+	"CODIGO_PREGUNTA" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table COMPLETAR
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."COMPLETAR" 
+   (	"CODIGO" NUMBER(*,0), 
+	"RESPUESTA" VARCHAR2(50 BYTE), 
+	"CODIGO_PREGUNTA" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table CONTENIDO
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."CONTENIDO" 
+   (	"CODIGO" NUMBER(*,0), 
+	"DESCRIPSION" VARCHAR2(200 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table CURSO
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."CURSO" 
+   (	"CODIGO" NUMBER(*,0), 
+	"NOMBRE" VARCHAR2(50 BYTE), 
+	"DESCRIPSION" VARCHAR2(200 BYTE), 
+	"CEDULA_DOCENTE" VARCHAR2(20 BYTE), 
+	"CODIGO_PLAN_ESTUDIO" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DOCENTE
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."DOCENTE" 
+   (	"CEDULA" VARCHAR2(20 BYTE), 
+	"NOMBRE" VARCHAR2(50 BYTE), 
+	"APELLIDO" VARCHAR2(50 BYTE), 
+	"EMAIL" VARCHAR2(50 BYTE), 
+	"PASWORD" VARCHAR2(20 BYTE), 
+	"DIRECCION" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EMPAREJAR
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."EMPAREJAR" 
+   (	"CODIGO" NUMBER(*,0), 
+	"CODIGO_MULTIPLE_RESPUESTA1" NUMBER(*,0), 
+	"CODIGO_MULTIPLE_RESPUESTA2" NUMBER(*,0), 
+	"CODIGO_PREGUNTA" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ESTADISTICA
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."ESTADISTICA" 
+   (	"CODIGO" NUMBER(*,0), 
+	"RESPUESTACORRECTA" NUMBER(*,0), 
+	"RESPUESTAINCORRECTA" NUMBER(*,0), 
+	"NOTAMENOR" FLOAT(126), 
+	"NOTAMAYOR" FLOAT(126), 
+	"CODIGO_PRUEBA" NUMBER
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ESTUDIANTE
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."ESTUDIANTE" 
+   (	"CEDULA" VARCHAR2(20 BYTE), 
+	"NOMBRE" VARCHAR2(50 BYTE), 
+	"APELLIDO" VARCHAR2(50 BYTE), 
+	"EMAIL" VARCHAR2(50 BYTE), 
+	"PASWORD" VARCHAR2(20 BYTE), 
+	"DIRECCION" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table FALSO_VERDADERO
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."FALSO_VERDADERO" 
+   (	"CODIGO" NUMBER(*,0), 
+	"RESPUESTA" NUMBER(*,0), 
+	"CODIGO_PREGUNTA" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table GRUPO
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."GRUPO" 
+   (	"CODIGO" NUMBER(*,0), 
+	"CODIGO_CURSO" NUMBER(*,0), 
+	"CODIGO_USUARIO" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MULTIPLE_RESPUESTA
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."MULTIPLE_RESPUESTA" 
+   (	"CODIGO" NUMBER(*,0), 
+	"RESPUESTA" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PLAN_ESTUDIO
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."PLAN_ESTUDIO" 
+   (	"CODIGO" NUMBER(*,0), 
+	"CODIGO_UNIDAD" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PREGUNTA
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."PREGUNTA" 
+   (	"CODIGO" NUMBER(*,0), 
+	"VALOR" FLOAT(126), 
+	"TIEMPORESOUESTA" NUMBER(*,0), 
+	"ENUNCIADO" VARCHAR2(200 BYTE), 
+	"CODIGO_TEMA" NUMBER(*,0), 
+	"CODIGO_PREGUNTA" NUMBER
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PRUEBA
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."PRUEBA" 
+   (	"CODIGO" NUMBER(*,0), 
+	"VALOR" FLOAT(126), 
+	"NOMBRE" VARCHAR2(50 BYTE), 
+	"DESCRIPSION" VARCHAR2(200 BYTE), 
+	"FECHAPRESENTACION" DATE, 
+	"CANTIDADPREGUNTAS" NUMBER(*,0), 
+	"CODIGO_TEMA" NUMBER(*,0), 
+	"CODIGO_BANCO_PREGUNTA" NUMBER(*,0), 
+	"CODIGO_ESTADISTICA" NUMBER(*,0), 
+	"CODIGO_GRUPO" NUMBER
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PRUEBA_USUARIO
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."PRUEBA_USUARIO" 
+   (	"CODIGO" NUMBER(*,0), 
+	"CODIGO_USUARIO" NUMBER(*,0), 
+	"CODIGO_PRUEBA" NUMBER(*,0), 
+	"NOTAMAXIMA" FLOAT(126)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table RESPUESTA_MULTIPLE
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."RESPUESTA_MULTIPLE" 
+   (	"CODIGO" NUMBER(*,0), 
+	"CODIGO_MULTIPLE_RESPUESTA" NUMBER(*,0), 
+	"CODIGO_PREGUNTA" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table RESPUESTA_UNICA
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."RESPUESTA_UNICA" 
+   (	"CODIGO" NUMBER(*,0), 
+	"RESPUESTA" VARCHAR2(50 BYTE), 
+	"CODIGO_PREGUNTA" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table RESPUESTA_USUARIO
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."RESPUESTA_USUARIO" 
+   (	"RESPUESTAUSUARIO" NUMBER(*,0), 
+	"CODIGO_PREGUNTA" NUMBER(*,0), 
+	"RESPUESTA" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TEMA
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."TEMA" 
+   (	"CODIGO" NUMBER(*,0), 
+	"NOMBRE" VARCHAR2(50 BYTE), 
+	"DESCRPSION" VARCHAR2(200 BYTE), 
+	"CODIGO_PRUEBA" NUMBER, 
+	"CODIGO_PREGUNTA" NUMBER
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table UNIDAD
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."UNIDAD" 
+   (	"CODIGO" NUMBER(*,0), 
+	"NOMBRE" VARCHAR2(50 BYTE), 
+	"DESCRIPSION" VARCHAR2(200 BYTE), 
+	"CODIGO_CONTENIDO" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table USUARIO
+--------------------------------------------------------
+
+  CREATE TABLE "ROOT"."USUARIO" 
+   (	"CODIGO" NUMBER(*,0), 
+	"NOMBRE" VARCHAR2(50 BYTE), 
+	"PASWORD" VARCHAR2(50 BYTE), 
+	"CEDULA_ESTUDIANTE" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into ROOT.BANCO_PREGUNTA
+SET DEFINE OFF;
+REM INSERTING into ROOT.COMPLETAR
+SET DEFINE OFF;
+REM INSERTING into ROOT.CONTENIDO
+SET DEFINE OFF;
+REM INSERTING into ROOT.CURSO
+SET DEFINE OFF;
+REM INSERTING into ROOT.DOCENTE
+SET DEFINE OFF;
+Insert into ROOT.DOCENTE (CEDULA,NOMBRE,APELLIDO,EMAIL,PASWORD,DIRECCION) values ('1000496121','Jose Ramirez','Espinosa','Jose@gmail.com','1234','cr19 25N-51');
+REM INSERTING into ROOT.EMPAREJAR
+SET DEFINE OFF;
+REM INSERTING into ROOT.ESTADISTICA
+SET DEFINE OFF;
+REM INSERTING into ROOT.ESTUDIANTE
+SET DEFINE OFF;
+Insert into ROOT.ESTUDIANTE (CEDULA,NOMBRE,APELLIDO,EMAIL,PASWORD,DIRECCION) values ('1000496120','Pablo andres','Lozano sanchez','pablitoal157@gmail.com','1234','cr19 25N-50');
+REM INSERTING into ROOT.FALSO_VERDADERO
+SET DEFINE OFF;
+REM INSERTING into ROOT.GRUPO
+SET DEFINE OFF;
+REM INSERTING into ROOT.MULTIPLE_RESPUESTA
+SET DEFINE OFF;
+Insert into ROOT.MULTIPLE_RESPUESTA (CODIGO,RESPUESTA) values ('1','Holanda');
+Insert into ROOT.MULTIPLE_RESPUESTA (CODIGO,RESPUESTA) values ('2','Finlandia');
+REM INSERTING into ROOT.PLAN_ESTUDIO
+SET DEFINE OFF;
+REM INSERTING into ROOT.PREGUNTA
+SET DEFINE OFF;
+REM INSERTING into ROOT.PRUEBA
+SET DEFINE OFF;
+REM INSERTING into ROOT.PRUEBA_USUARIO
+SET DEFINE OFF;
+REM INSERTING into ROOT.RESPUESTA_MULTIPLE
+SET DEFINE OFF;
+REM INSERTING into ROOT.RESPUESTA_UNICA
+SET DEFINE OFF;
+REM INSERTING into ROOT.RESPUESTA_USUARIO
+SET DEFINE OFF;
+REM INSERTING into ROOT.TEMA
+SET DEFINE OFF;
+REM INSERTING into ROOT.UNIDAD
+SET DEFINE OFF;
+REM INSERTING into ROOT.USUARIO
+SET DEFINE OFF;
+Insert into ROOT.USUARIO (CODIGO,NOMBRE,PASWORD,CEDULA_ESTUDIANTE) values ('1','pablitoal157@gmail.com','1234','1000496120');
+--------------------------------------------------------
+--  DDL for Index BANCO_PREGUNTA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."BANCO_PREGUNTA_PK" ON "ROOT"."BANCO_PREGUNTA" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index COMPLETAR_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."COMPLETAR_PK" ON "ROOT"."COMPLETAR" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index CONTENIDO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."CONTENIDO_PK" ON "ROOT"."CONTENIDO" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index CURSO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."CURSO_PK" ON "ROOT"."CURSO" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index DOCENTE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."DOCENTE_PK" ON "ROOT"."DOCENTE" ("CEDULA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index EMPAREJAR_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."EMPAREJAR_PK" ON "ROOT"."EMPAREJAR" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ESTADISTICA1_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."ESTADISTICA1_PK" ON "ROOT"."ESTADISTICA" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ESTADISTICA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."ESTADISTICA_PK" ON "ROOT"."RESPUESTA_UNICA" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ESTUDIANTE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."ESTUDIANTE_PK" ON "ROOT"."ESTUDIANTE" ("CEDULA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index FALSO_VERDADERO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."FALSO_VERDADERO_PK" ON "ROOT"."FALSO_VERDADERO" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index GRUPO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."GRUPO_PK" ON "ROOT"."GRUPO" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index MULTIPLE_RESPUESTA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."MULTIPLE_RESPUESTA_PK" ON "ROOT"."MULTIPLE_RESPUESTA" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PLAN_ESTUDIO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."PLAN_ESTUDIO_PK" ON "ROOT"."PLAN_ESTUDIO" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PREGUNTA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."PREGUNTA_PK" ON "ROOT"."PREGUNTA" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PRUEBA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."PRUEBA_PK" ON "ROOT"."PRUEBA" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PRUEBA_USUARIO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."PRUEBA_USUARIO_PK" ON "ROOT"."PRUEBA_USUARIO" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index RESPUESTA_MULTIPLE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."RESPUESTA_MULTIPLE_PK" ON "ROOT"."RESPUESTA_MULTIPLE" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index RESPUESTA_USUARIO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."RESPUESTA_USUARIO_PK" ON "ROOT"."RESPUESTA_USUARIO" ("RESPUESTAUSUARIO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index TEMA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."TEMA_PK" ON "ROOT"."TEMA" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIDAD_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."UNIDAD_PK" ON "ROOT"."UNIDAD" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index USUARIO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ROOT"."USUARIO_PK" ON "ROOT"."USUARIO" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table PRUEBA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."PRUEBA" MODIFY ("VALOR" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA" MODIFY ("DESCRIPSION" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA" MODIFY ("FECHAPRESENTACION" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA" MODIFY ("CANTIDADPREGUNTAS" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA" MODIFY ("CODIGO_TEMA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA" MODIFY ("CODIGO_GRUPO" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA" MODIFY ("CODIGO_BANCO_PREGUNTA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA" MODIFY ("CODIGO_ESTADISTICA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA" ADD CONSTRAINT "PRUEBA_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table BANCO_PREGUNTA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."BANCO_PREGUNTA" MODIFY ("CODIGO" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."BANCO_PREGUNTA" MODIFY ("CODIGO_TEMA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."BANCO_PREGUNTA" MODIFY ("CODIGO_PREGUNTA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."BANCO_PREGUNTA" ADD CONSTRAINT "BANCO_PREGUNTA_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PREGUNTA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."PREGUNTA" MODIFY ("CODIGO" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PREGUNTA" MODIFY ("VALOR" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PREGUNTA" MODIFY ("TIEMPORESOUESTA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PREGUNTA" MODIFY ("ENUNCIADO" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PREGUNTA" MODIFY ("CODIGO_TEMA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PREGUNTA" ADD CONSTRAINT "PREGUNTA_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table CURSO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."CURSO" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."CURSO" MODIFY ("DESCRIPSION" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."CURSO" ADD CONSTRAINT "CURSO_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "ROOT"."CURSO" MODIFY ("CODIGO_PLAN_ESTUDIO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table EMPAREJAR
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."EMPAREJAR" ADD CONSTRAINT "EMPAREJAR_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DOCENTE
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."DOCENTE" MODIFY ("CEDULA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."DOCENTE" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."DOCENTE" MODIFY ("APELLIDO" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."DOCENTE" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."DOCENTE" MODIFY ("PASWORD" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."DOCENTE" ADD CONSTRAINT "DOCENTE_PK" PRIMARY KEY ("CEDULA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PLAN_ESTUDIO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."PLAN_ESTUDIO" ADD CONSTRAINT "PLAN_ESTUDIO_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "ROOT"."PLAN_ESTUDIO" MODIFY ("CODIGO_UNIDAD" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TEMA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."TEMA" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."TEMA" MODIFY ("DESCRPSION" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."TEMA" ADD CONSTRAINT "TEMA_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table USUARIO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."USUARIO" MODIFY ("CODIGO" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."USUARIO" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."USUARIO" MODIFY ("PASWORD" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."USUARIO" MODIFY ("CEDULA_ESTUDIANTE" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."USUARIO" ADD CONSTRAINT "USUARIO_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table FALSO_VERDADERO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."FALSO_VERDADERO" MODIFY ("RESPUESTA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."FALSO_VERDADERO" ADD CONSTRAINT "FALSO_VERDADERO_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PRUEBA_USUARIO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."PRUEBA_USUARIO" MODIFY ("CODIGO_USUARIO" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA_USUARIO" MODIFY ("CODIGO_PRUEBA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA_USUARIO" MODIFY ("NOTAMAXIMA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."PRUEBA_USUARIO" ADD CONSTRAINT "PRUEBA_USUARIO_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table UNIDAD
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."UNIDAD" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."UNIDAD" MODIFY ("DESCRIPSION" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."UNIDAD" ADD CONSTRAINT "UNIDAD_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ESTADISTICA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."ESTADISTICA" ADD CONSTRAINT "ESTADISTICA1_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table COMPLETAR
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."COMPLETAR" MODIFY ("RESPUESTA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."COMPLETAR" ADD CONSTRAINT "COMPLETAR_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table RESPUESTA_USUARIO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."RESPUESTA_USUARIO" ADD CONSTRAINT "RESPUESTA_USUARIO_PK" PRIMARY KEY ("RESPUESTAUSUARIO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table CONTENIDO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."CONTENIDO" MODIFY ("DESCRIPSION" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."CONTENIDO" ADD CONSTRAINT "CONTENIDO_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ESTUDIANTE
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."ESTUDIANTE" MODIFY ("CEDULA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."ESTUDIANTE" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."ESTUDIANTE" MODIFY ("APELLIDO" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."ESTUDIANTE" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."ESTUDIANTE" MODIFY ("PASWORD" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."ESTUDIANTE" ADD CONSTRAINT "ESTUDIANTE_PK" PRIMARY KEY ("CEDULA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "ROOT"."ESTUDIANTE" MODIFY ("DIRECCION" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table GRUPO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."GRUPO" MODIFY ("CODIGO" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."GRUPO" MODIFY ("CODIGO_CURSO" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."GRUPO" MODIFY ("CODIGO_USUARIO" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."GRUPO" ADD CONSTRAINT "GRUPO_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MULTIPLE_RESPUESTA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."MULTIPLE_RESPUESTA" MODIFY ("RESPUESTA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."MULTIPLE_RESPUESTA" ADD CONSTRAINT "MULTIPLE_RESPUESTA_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table RESPUESTA_UNICA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."RESPUESTA_UNICA" MODIFY ("RESPUESTA" NOT NULL ENABLE);
+  ALTER TABLE "ROOT"."RESPUESTA_UNICA" ADD CONSTRAINT "ESTADISTICA_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table RESPUESTA_MULTIPLE
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."RESPUESTA_MULTIPLE" ADD CONSTRAINT "RESPUESTA_MULTIPLE_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table BANCO_PREGUNTA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."BANCO_PREGUNTA" ADD FOREIGN KEY ("CODIGO_TEMA")
+	  REFERENCES "ROOT"."TEMA" ("CODIGO") ENABLE;
+  ALTER TABLE "ROOT"."BANCO_PREGUNTA" ADD FOREIGN KEY ("CODIGO_PREGUNTA")
+	  REFERENCES "ROOT"."PREGUNTA" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table COMPLETAR
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."COMPLETAR" ADD FOREIGN KEY ("CODIGO_PREGUNTA")
+	  REFERENCES "ROOT"."PREGUNTA" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table CURSO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."CURSO" ADD FOREIGN KEY ("CEDULA_DOCENTE")
+	  REFERENCES "ROOT"."DOCENTE" ("CEDULA") ENABLE;
+  ALTER TABLE "ROOT"."CURSO" ADD FOREIGN KEY ("CODIGO_PLAN_ESTUDIO")
+	  REFERENCES "ROOT"."PLAN_ESTUDIO" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table EMPAREJAR
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."EMPAREJAR" ADD FOREIGN KEY ("CODIGO_MULTIPLE_RESPUESTA1")
+	  REFERENCES "ROOT"."MULTIPLE_RESPUESTA" ("CODIGO") ENABLE;
+  ALTER TABLE "ROOT"."EMPAREJAR" ADD FOREIGN KEY ("CODIGO_MULTIPLE_RESPUESTA2")
+	  REFERENCES "ROOT"."MULTIPLE_RESPUESTA" ("CODIGO") ENABLE;
+  ALTER TABLE "ROOT"."EMPAREJAR" ADD FOREIGN KEY ("CODIGO_PREGUNTA")
+	  REFERENCES "ROOT"."PREGUNTA" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ESTADISTICA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."ESTADISTICA" ADD CONSTRAINT "ESTADISTICA_FK1" FOREIGN KEY ("CODIGO")
+	  REFERENCES "ROOT"."PRUEBA" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table FALSO_VERDADERO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."FALSO_VERDADERO" ADD FOREIGN KEY ("CODIGO_PREGUNTA")
+	  REFERENCES "ROOT"."PREGUNTA" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table GRUPO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."GRUPO" ADD FOREIGN KEY ("CODIGO_CURSO")
+	  REFERENCES "ROOT"."CURSO" ("CODIGO") ENABLE;
+  ALTER TABLE "ROOT"."GRUPO" ADD FOREIGN KEY ("CODIGO_USUARIO")
+	  REFERENCES "ROOT"."USUARIO" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PLAN_ESTUDIO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."PLAN_ESTUDIO" ADD FOREIGN KEY ("CODIGO_UNIDAD")
+	  REFERENCES "ROOT"."UNIDAD" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PREGUNTA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."PREGUNTA" ADD FOREIGN KEY ("CODIGO_TEMA")
+	  REFERENCES "ROOT"."TEMA" ("CODIGO") ENABLE;
+  ALTER TABLE "ROOT"."PREGUNTA" ADD CONSTRAINT "PREGUNTA_FK1" FOREIGN KEY ("CODIGO")
+	  REFERENCES "ROOT"."PREGUNTA" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PRUEBA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."PRUEBA" ADD FOREIGN KEY ("CODIGO_TEMA")
+	  REFERENCES "ROOT"."TEMA" ("CODIGO") ENABLE;
+  ALTER TABLE "ROOT"."PRUEBA" ADD FOREIGN KEY ("CODIGO_BANCO_PREGUNTA")
+	  REFERENCES "ROOT"."TEMA" ("CODIGO") ENABLE;
+  ALTER TABLE "ROOT"."PRUEBA" ADD FOREIGN KEY ("CODIGO_ESTADISTICA")
+	  REFERENCES "ROOT"."TEMA" ("CODIGO") ENABLE;
+  ALTER TABLE "ROOT"."PRUEBA" ADD CONSTRAINT "PRUEBA_FK1" FOREIGN KEY ("CODIGO")
+	  REFERENCES "ROOT"."CURSO" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PRUEBA_USUARIO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."PRUEBA_USUARIO" ADD FOREIGN KEY ("CODIGO_USUARIO")
+	  REFERENCES "ROOT"."USUARIO" ("CODIGO") ENABLE;
+  ALTER TABLE "ROOT"."PRUEBA_USUARIO" ADD FOREIGN KEY ("CODIGO_PRUEBA")
+	  REFERENCES "ROOT"."PRUEBA" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RESPUESTA_MULTIPLE
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."RESPUESTA_MULTIPLE" ADD FOREIGN KEY ("CODIGO_MULTIPLE_RESPUESTA")
+	  REFERENCES "ROOT"."MULTIPLE_RESPUESTA" ("CODIGO") ENABLE;
+  ALTER TABLE "ROOT"."RESPUESTA_MULTIPLE" ADD FOREIGN KEY ("CODIGO_PREGUNTA")
+	  REFERENCES "ROOT"."PREGUNTA" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RESPUESTA_UNICA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."RESPUESTA_UNICA" ADD FOREIGN KEY ("CODIGO_PREGUNTA")
+	  REFERENCES "ROOT"."PREGUNTA" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RESPUESTA_USUARIO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."RESPUESTA_USUARIO" ADD FOREIGN KEY ("CODIGO_PREGUNTA")
+	  REFERENCES "ROOT"."PREGUNTA" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TEMA
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."TEMA" ADD CONSTRAINT "TEMA_FK1" FOREIGN KEY ("CODIGO")
+	  REFERENCES "ROOT"."PRUEBA" ("CODIGO") ENABLE;
+  ALTER TABLE "ROOT"."TEMA" ADD CONSTRAINT "TEMA_FK2" FOREIGN KEY ("CODIGO")
+	  REFERENCES "ROOT"."PREGUNTA" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table UNIDAD
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."UNIDAD" ADD FOREIGN KEY ("CODIGO_CONTENIDO")
+	  REFERENCES "ROOT"."CONTENIDO" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table USUARIO
+--------------------------------------------------------
+
+  ALTER TABLE "ROOT"."USUARIO" ADD FOREIGN KEY ("CEDULA_ESTUDIANTE")
+	  REFERENCES "ROOT"."ESTUDIANTE" ("CEDULA") ENABLE;

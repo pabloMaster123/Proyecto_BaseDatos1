@@ -1,5 +1,6 @@
 package co.edu.uniquindio.adress.model;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -7,23 +8,27 @@ public class Prueba {
 	
 	private Integer codigoPrueba;
 	
-	private Double valorPrueba;
+	private Float valorPrueba;
 	
 	private String nombrePrueba;
 	
 	private String descripisionPrueba;
 	
-	private LocalDate fechaPresentacion;
+	private Date fechaPresentacion;
 	
 	private Integer cantidadPreguntas;
 	
-	private ArrayList<Pregunta> preguntas;
+	private ArrayList<Pregunta> lista;
+	
+	private BancoPregunta preguntas;
 	
 	private Tema tema;
+	
+	private Estadistica estadistica;
 
-	public Prueba(Integer codigoPrueba,Double valorPrueba,String nombrePrueba
-			,String descripisionPrueba,LocalDate fechaPresentacion,Integer cantidadPreguntas
-			,ArrayList<Pregunta> preguntas,Tema tema) {
+	public Prueba(Integer codigoPrueba,Float valorPrueba,String nombrePrueba
+			,String descripisionPrueba,Date fechaPresentacion,Integer cantidadPreguntas
+			,BancoPregunta preguntas,Tema tema) {
 		this.codigoPrueba 		= codigoPrueba;
 		this.valorPrueba  		= valorPrueba;
 		this.nombrePrueba  		= nombrePrueba;
@@ -32,6 +37,7 @@ public class Prueba {
 		this.cantidadPreguntas	= cantidadPreguntas;
 		this.preguntas			= preguntas;
 		this.tema				= tema;
+		lista 					= new ArrayList<Pregunta>();
 	}
 	
 	public Integer getCodigoPrueba() {
@@ -42,11 +48,11 @@ public class Prueba {
 		this.codigoPrueba = codigoPrueba;
 	}
 
-	public Double getValorPrueba() {
+	public Float getValorPrueba() {
 		return valorPrueba;
 	}
 
-	public void setValorPrueba(Double valorPrueba) {
+	public void setValorPrueba(Float valorPrueba) {
 		this.valorPrueba = valorPrueba;
 	}
 
@@ -66,11 +72,11 @@ public class Prueba {
 		this.descripisionPrueba = descripisionPrueba;
 	}
 
-	public LocalDate getFechaPresentacion() {
+	public Date getFechaPresentacion() {
 		return fechaPresentacion;
 	}
 
-	public void setFechaPresentacion(LocalDate fechaPresentacion) {
+	public void setFechaPresentacion(Date fechaPresentacion) {
 		this.fechaPresentacion = fechaPresentacion;
 	}
 
@@ -82,11 +88,11 @@ public class Prueba {
 		this.cantidadPreguntas = cantidadPreguntas;
 	}
 
-	public ArrayList<Pregunta> getPreguntas() {
+	public BancoPregunta getPreguntas() {
 		return preguntas;
 	}
 
-	public void setPreguntas(ArrayList<Pregunta> preguntas) {
+	public void setPreguntas(BancoPregunta preguntas) {
 		this.preguntas = preguntas;
 	}
 
@@ -96,6 +102,22 @@ public class Prueba {
 
 	public void setTema(Tema tema) {
 		this.tema = tema;
+	}
+
+	public ArrayList<Pregunta> getLista() {
+		return lista;
+	}
+
+	public void setLista(ArrayList<Pregunta> lista) {
+		this.lista = lista;
+	}
+
+	public Estadistica getEstadistica() {
+		return estadistica;
+	}
+
+	public void setEstadistica(Estadistica estadistica) {
+		this.estadistica = estadistica;
 	}
 	
 }

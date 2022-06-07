@@ -10,12 +10,12 @@ public class RespuestaMultiple {
 	
 	private Pregunta pregunta;
 	
-	private ArrayList<String> respuestas;
+	private ArrayList<MultiplesRespuestas> respuestas;
 	
 	public RespuestaMultiple(Integer codigoRespuesta,Pregunta pregunta) {
 		this.codigoRespuesta = codigoRespuesta;
 		this.pregunta 		 = pregunta;
-		respuestas 			 = new ArrayList<String>();
+		respuestas 			 = new ArrayList<MultiplesRespuestas>();
 	}	
 	
 	public Integer getCodigoRespuesta() {
@@ -34,11 +34,11 @@ public class RespuestaMultiple {
 		this.pregunta = pregunta;
 	}
 
-	public ArrayList<String> getRespuestas() {
+	public ArrayList<MultiplesRespuestas> getRespuestas() {
 		return respuestas;
 	}
 
-	public void setRespuestas(ArrayList<String> respuestas) {
+	public void setRespuestas(ArrayList<MultiplesRespuestas> respuestas) {
 		this.respuestas = respuestas;
 	}
 	

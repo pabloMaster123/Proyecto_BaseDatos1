@@ -7,4 +7,13 @@ public class Estudiante extends Persona {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString() {
+		return "Estudiante [getCedula()=" + getCedula() + ", getNombre()=" + getNombre() + ", getApellido()="
+				+ getApellido() + ", getEmail()=" + getEmail() + ", getDirrecion()=" + getDirrecion()
+				+ ", getPasword()=" + getPasword() + "]";
+	}
+
+	
+	
 }

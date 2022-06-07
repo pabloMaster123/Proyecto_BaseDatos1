@@ -60,5 +60,13 @@ public class Usuario {
 	public void setPruebaUsuarios(ArrayList<PruebaUsuario> pruebaUsuarios) {
 		this.pruebaUsuarios = pruebaUsuarios;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [codigoUsuario=" + codigoUsuario + ", nobreUsuario=" + nobreUsuario + ", contrasenia="
+				+ contrasenia + ", estudiante=" + estudiante + ", pruebaUsuarios=" + pruebaUsuarios + "]";
+	}
+	
+	
 	
 }

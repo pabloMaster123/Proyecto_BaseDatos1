@@ -6,22 +6,25 @@ public class Estadistica {
 	
 	private Integer codigo;
 	
-	private ArrayList<Prueba> pruebas;
+	private Prueba  prueba;
 	
 	private Integer respuestasCorrectas;
 	
 	private Integer respuestasIncorectas;
 
-	private Double notaMinima;
+	private Float notaMinima;
 	
-	private Double notaMaxima;
+	private Float notaMaxima;
+	
 
-	public Estadistica(Integer codigo) {
+	public Estadistica(Integer codigo,Prueba  prueba,Integer respuestasCorrectas,Integer respuestasIncorectas,
+			Float notaMinima,Float notaMaxima) {
 		this.codigo 			  = codigo;
-		this.respuestasCorrectas  = 0;
-		this.respuestasIncorectas = 0;
-		this.notaMinima			  = 0.0;
-		this.notaMaxima			  = 0.0;
+		this.prueba				  = prueba;
+		this.respuestasCorrectas  = respuestasCorrectas;
+		this.respuestasIncorectas = respuestasIncorectas;
+		this.notaMinima			  = notaMinima;
+		this.notaMaxima			  = notaMaxima;
 	}
 	
 	public Integer getCodigo() {
@@ -31,13 +34,13 @@ public class Estadistica {
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
-
-	public ArrayList<Prueba> getPruebas() {
-		return pruebas;
+	
+	public Prueba getPruebas() {
+		return prueba;
 	}
 
-	public void setPruebas(ArrayList<Prueba> pruebas) {
-		this.pruebas = pruebas;
+	public void setPruebas(Prueba pruebas) {
+		this.prueba = pruebas;
 	}
 
 	public Integer getRespuestasCorrectas() {
@@ -56,20 +59,20 @@ public class Estadistica {
 		this.respuestasIncorectas = respuestasIncorectas;
 	}
 
-	public Double getNotaMinima() {
+	public Float getNotaMinima() {
 		return notaMinima;
 	}
 
-	public void setNotaMinima(Double notaMinima) {
+	public void setNotaMinima(Float notaMinima) {
 		this.notaMinima = notaMinima;
 	}
 
-	public Double getNotaMaxima() {
+	public Float getNotaMaxima() {
 		return notaMaxima;
 	}
 
-	public void setNotaMaxima(Double notaMaxima) {
+	public void setNotaMaxima(Float notaMaxima) {
 		this.notaMaxima = notaMaxima;
 	}
-	
+
 }

@@ -1,20 +1,19 @@
 package co.edu.uniquindio.adress.view;
 
-import co.edu.uniquindio.adress.model.*;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import java.awt.Toolkit;
+
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
-public class VistaPrueba extends javax.swing.JFrame {
+public class respuestaMultiple extends JFrame {
 
-
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	public VistaPrueba() {
+	public respuestaMultiple() {
         initComponents();
-       // question.setText(p.getEnunciado(posicion));
+        question.setText(p.getPregunta(posicion));
         String[] a = r.setRespuestas(posicion);
         buttonGroup1.clearSelection(); // sirve para borrar las selecciones de los radio button
         opc1.setText(a[0]);
@@ -29,7 +28,7 @@ public class VistaPrueba extends javax.swing.JFrame {
 
     int posicion = 0;
     Respuestas r = new Respuestas();
-    Pregunta p = new Pregunta(codigo, valorPregunta, tema, tiempoRespuesta, enunciado);
+    Preguntas p = new Preguntas();
     Object[] select = {"","","","",""};
     
     @SuppressWarnings("unchecked")
@@ -47,6 +46,10 @@ public class VistaPrueba extends javax.swing.JFrame {
         terminarExamen = new javax.swing.JButton();
         avanzar = new javax.swing.JButton();
         regresar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,10 +57,10 @@ public class VistaPrueba extends javax.swing.JFrame {
         jPanel1.setName("Examen"); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Pregunta");
+        jLabel1.setText("Pregunta de opcion multiple");
 
         question.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        question.setText("¿Pregunta 1?");
+        question.setText("Â¿Pregunta 1?");
 
         buttonGroup1.add(opc1);
         opc1.addActionListener(new java.awt.event.ActionListener() {
@@ -108,27 +111,20 @@ public class VistaPrueba extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("A)");
+
+        jLabel3.setText("B)");
+
+        jLabel4.setText("C)");
+
+        jLabel5.setText("D)");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(question)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(opc2)
-                                    .addComponent(opc1)
-                                    .addComponent(opc3)
-                                    .addComponent(opc4))))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 505, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,24 +132,58 @@ public class VistaPrueba extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(regresar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(avanzar)))))
+                                .addComponent(avanzar))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(question)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(opc4))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(opc3))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(opc1))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(opc2)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(question)
-                .addGap(47, 47, 47)
-                .addComponent(opc1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(question)
+                        .addGap(47, 47, 47)
+                        .addComponent(opc1))
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addComponent(opc2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(opc2)
+                    .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addComponent(opc3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(opc3)
+                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
-                .addComponent(opc4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(opc4)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(avanzar)
@@ -267,6 +297,10 @@ public class VistaPrueba extends javax.swing.JFrame {
     private javax.swing.JButton avanzar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton opc1;
     private javax.swing.JRadioButton opc2;
@@ -276,4 +310,5 @@ public class VistaPrueba extends javax.swing.JFrame {
     private javax.swing.JButton regresar;
     private javax.swing.JButton terminarExamen;
     // End of variables declaration//GEN-END:variables
+
 }
